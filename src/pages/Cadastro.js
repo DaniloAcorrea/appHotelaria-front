@@ -37,6 +37,10 @@ export default function renderCadastroPage() {
 
     const formulario = LoginForm();
     
+    btnVoltar.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'login.html';
+    });
 
     const btnRegister = formulario.querySelector('button');
     btnRegister.textContent = "Criar conta ";

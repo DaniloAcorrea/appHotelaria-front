@@ -30,6 +30,11 @@ export default function renderLoginPage(){
     btnCadastrar.href = 'Cadastro.html';
     btnCadastrar.textContent = "Crie uma conta";
     btnCadastrar.className = 'btn btn-link mt-2 text-center';
+
+     btnCadastrar.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'Cadastro.html';
+    });
    
     container.appendChild(titulo);
     container.appendChild(formulario); //Nova div container, já dentro de divRoot, contém o form
