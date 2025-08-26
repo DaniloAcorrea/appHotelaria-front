@@ -27,13 +27,12 @@ export default function renderLoginPage(){
    
     const formulario = LoginForm();
     const btnCadastrar = document.createElement('button');
-    btnCadastrar.href = 'Cadastro.html';
     btnCadastrar.textContent = "Crie uma conta";
     btnCadastrar.className = 'btn btn-link mt-2 text-center';
 
-     btnCadastrar.addEventListener('click', (e) => {
+    btnCadastrar.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'Cadastro.html';
+        window.location.href = '#/cadastro';
     });
    
     container.appendChild(titulo);

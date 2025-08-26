@@ -12,11 +12,6 @@ export default function LoginForm(){
     password.type = 'password';
     password.placeholder = "Digite sua senha";
     formulario.appendChild(password);
-
-    const confSenha = document.createElement('input');
-    confSenha.placeholder = "senha";
-    confSenha.placeholder = ("Confirme sua senha");
-    formulario.appendChild(confSenha);
  
     const btnAuth = document.createElement('button');
     btnAuth.type = 'submit';

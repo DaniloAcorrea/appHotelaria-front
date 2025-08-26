@@ -27,19 +27,24 @@ export default function renderCadastroPage() {
     const nome = document.createElement('input');
     nome.placeholder = "Digite seu nome";
 
+   
+
 
     const btnVoltar = document.createElement('button');
-    btnVoltar.href = 'login.html';
     btnVoltar.textContent = "Ja tenho uma conta";
     btnVoltar.className = 'btn btn-link mt-2 text-center'; // Classe do Bootstrap para estilizar o botão
 
 
 
     const formulario = LoginForm();
+
+    const confSenha = document.createElement('input');
+    confSenha.placeholder = "senha";
+    confSenha.placeholder = ("Confirme sua senha");
     
     btnVoltar.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'login.html';
+        window.location.href = '#/login';
     });
 
     const btnRegister = formulario.querySelector('button');
@@ -48,6 +53,7 @@ export default function renderCadastroPage() {
 
     container.appendChild(titulo);
     container.appendChild(nome); // Adiciona o input de nome ao container
+    formulario.querySelector('input[type="password"]').after(confSenha); // Adiciona o campo de confirmação de senha após o campo de senha
     container.appendChild(formulario); // Nova div container, já dentro de divRoot, contém o form
     container.appendChild(btnVoltar); // Adiciona o botão de voltar ao container
 }
