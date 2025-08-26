@@ -1,17 +1,17 @@
-function Hero() {
-    const containerHero = document.createElement('hero');
+export default function Hero() {
+    const containerHero = document.createElement('div');
 
-    innerHTML = `
+    containerHero.innerHTML = `
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="../public/assets/img/carousel" alt="First slide">
+      <img class="d-block w-100" src="../public/assets/img/carousel.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="../public/assets/img/carousel2" alt="Second slide">
+      <img class="d-block w-100" src="../public/assets/img/carousel2.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="../public/assets/img/carousel3" alt="Third slide">
+      <img class="d-block w-100" src="../public/assets/img/carousel3.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -23,9 +23,7 @@ function Hero() {
     <span class="sr-only">Next</span>
   </a>
 </div>`
-
-return heroSection;
-
+return containerHero;
 }
 
 
