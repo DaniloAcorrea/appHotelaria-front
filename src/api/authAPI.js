@@ -1,11 +1,16 @@
 export async function loginRequest(email, senha){
-    const response = await fetch("/api/login", {
+   
+    const dados = {email, senha};
+    const response = await fetch("api/login", {
         method: "POST",
         headers: {
            "Accept": "application/json",
-           "Content-type": "application/x-www-urlencoded;charset=UTF-8"
+           "Content-Type": "application/json"
         },
-        body: new URLSearchParams({email, senha}).toString(),
+
+        body: JSON.stringify(dados),
+
+        //body: new URLSearchParams({email, senha}).toString(),
  
         /* URL da requisisção é a mesma da origem do front (mesmo protocolo http/mesmo dominio - local/mesma porta 80 do servidor web Apache)
         Front: http://localhost/sitemeuMaldonado/public/index.html
@@ -24,9 +29,30 @@ export async function loginRequest(email, senha){
         data = null;
     }
  
+    if(!data || !data.token){
+        const message = "Resposta invalida do servidor. token ausebt";
+        return {ok: false, token: null, raw: data, message};
+    }
+
     return {
         ok: true,
-        user: data.user ?? null,
+        token: data.token,
         raw: data
     };
+
+
 }
+    export function saveToken(token){
+          localStorage.setItem("auth_token", token);
+        
+    }
+
+    export function getToken(){
+        return localStorage.getItem("auth_token");
+    }
+
+    export function clearToken(){
+        localStorage.removeItem("auth_token")
+    }
+
+

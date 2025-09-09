@@ -1,5 +1,8 @@
+import { loginRequest, saveToken } from "../api/authAPI.js";
 import LoginForm from "../components/LoginForm.js";
 import Navbar from "../components/NavBar.js";
+
+
 
 export default function renderLoginPage() {
     const nav = document.getElementById('navbar');
@@ -35,25 +38,28 @@ export default function renderLoginPage() {
         e.preventDefault();
         window.location.href = "cadastro";
     });
+   
+    const inputEmail = formulario.querySelector('input[type="email"]');
+    const inputSenha = formulario.querySelector('input[type="password"]');
+  
 
-    const contentForm = formulario.querySelector("form");
-
-
-    contentForm.addEventListener('submit', async (e) => {
+    formulario.addEventListener('submit', async (e) => {
         e.preventDefault();
         const email = inputEmail.value.trim();
         const senha = inputSenha.value.trim();
 
         try {
             const result = await loginRequest(email, senha);
-            console.log("Login realizado com sucesso:");
-            window.location.href = "/home";
+    
+            saveToken(result.token)
+            //window.location.href = "/home";
         }
-        catch {
-            console.error("Erro ao realizar login:");
+        catch (error) {
+            console.error("Erro ao realizar login:", error);
+        
         }
     })
-
+    
     container.appendChild(titulo);
     container.appendChild(formulario); //Nova div container, já dentro de divRoot, contém o form
     divRoot.appendChild(container); //divRoot contém a nova div

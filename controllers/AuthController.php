@@ -3,7 +3,6 @@
     require_once __DIR__ ."/../models/UserModel.php";
     require_once  __DIR__ ."/passwordController.php";
     require_once __DIR__ ."/../helpers/token_jwt.php";
-    require_once __DIR__ . "/../helpers/token_jwt.php";
 
 
     class authentiqueController{

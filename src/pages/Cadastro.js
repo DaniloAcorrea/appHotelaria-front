@@ -1,5 +1,7 @@
 import LoginForm from "../components/LoginForm.js";
 import Navbar from "../components/NavBar.js";
+import Footer from "../components/Footer.js";
+
 
 export default function renderCadastroPage() {
     const nav = document.getElementById('navbar');
@@ -49,7 +51,6 @@ export default function renderCadastroPage() {
 
     const btnRegister = formulario.querySelector('button');
     btnRegister.textContent = "Criar conta ";
-
 
     container.appendChild(titulo);
     container.appendChild(nome); // Adiciona o input de nome ao container
