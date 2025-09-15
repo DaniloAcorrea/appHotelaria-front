@@ -1,7 +1,8 @@
+import DateSelector from "../components/DateSelector.js";
 import Footer from "../components/Footer.js";
 import Hero from "../components/hero.js";
 import Navbar from "../components/NavBar.js";
-import QaurtosCard from "../components/QaurtosCard.js"; "../components/QaurtosCard.js";
+import QaurtosCard from "../components/QuartosCard.js"; "../components/QaurtosCard.js";
 
 
 export default function renderHomePage(){
@@ -17,6 +18,12 @@ export default function renderHomePage(){
 
     const hero = Hero();
     divRoot.appendChild(hero);
+
+    const date = document.getElementById('div')
+    date.innerHTML = '';
+
+    const dateselector = DateSelector();
+    date.appendChild(dateselector);
     
     // const card = document.getElementById('root');
     // card.innerHTML = '';
@@ -30,4 +37,8 @@ export default function renderHomePage(){
 
     const footer = Footer();
     foot.appendChild(footer);
+
+    
+
+
 }
