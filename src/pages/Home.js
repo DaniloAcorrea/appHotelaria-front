@@ -15,29 +15,29 @@ export default function renderHomePage(){
     const divRoot = document.getElementById('root');
     divRoot.innerHTML = '';
     
-
+   
     const hero = Hero();
     divRoot.appendChild(hero);
 
-    const date = document.getElementById('div')
-    date.innerHTML = '';
+    const cardsGrup = document.createElement('div');
+    cardsGrup.className = "cards";
 
-    const dateselector = DateSelector();
-    date.appendChild(dateselector);
-    
-    // const card = document.getElementById('root');
-    // card.innerHTML = '';
+    for(var i = 0; i>3; i++) {
+        const cards = QaurtosCard();
+        cardsGrup.appendChild(cards);
+    }
+    divRoot.appendChild(cardsGrup);
 
-    // const carrd = QaurtosCard();
-    // card.appendChild(carrd)
- 
+   const date = DateSelector();
+    divRoot.appendChild(date)
+
 
     const foot = document.getElementById('footer');
     foot.innerHTML = '';
-
+    
     const footer = Footer();
     foot.appendChild(footer);
-
+    
     
 
 

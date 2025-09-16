@@ -3,14 +3,19 @@ export default function DateSelector() {
 
   
   dateselector.innerHTML = `
-  <div>
-  <input type="text" placeholder="">
-  <input type="text" placeholder="">
-  <select>
-    <option>1 adulto · 0 criança · 1 cômodo</option>
-  </select>
-  <button>Pesquisar</button>
-</div>
+<div class="search-bar">
+        <div><input type="text" placeholder="Para onde você vai?"></div>
+        <div class="date-input">
+            <input type="date" placeholder="Data de check-in"> -
+            <input type="date" placeholder="Data de check-out">
+        </div>
+        <div>
+            <select>
+                <option>2 adultos, 0 crianças, 1 quarto</option>
+            </select>
+        </div>
+        <button class="search-button">Pesquisar</button>
+    </div>
   `
 return dateselector;
 }

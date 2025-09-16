@@ -34,5 +34,22 @@
     
 }
 
+#root{
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10vh;
+
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
 
 
