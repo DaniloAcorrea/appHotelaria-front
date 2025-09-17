@@ -20,12 +20,12 @@ $route = $seguimentos[0] ?? null;
 $subroute = $seguimentos[1] ?? null;
 
 if($route != "api"){
-    require __DIR__ . "/public/index.html";
-    // require_once "teste.php";
+    // require __DIR__ . "/public/index.html";
+    require_once "teste.php";
     exit;
 } 
 elseif ($route === "api"){
-    if(in_array($subroute, ["login"])){
+    if(in_array($subroute, ["login", "quarto","cliente"])){
         require "routes/${subroute}.php";
     }else{
         return jsonResponse(['message' => 'rota da api invalida'], 404);

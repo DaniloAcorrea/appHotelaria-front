@@ -4,11 +4,9 @@
     require_once __DIR__ ."/controllers/quartosController.php";
     require_once __DIR__ ."/controllers/passwordController.php";
     require_once __DIR__ ."/helpers/token_jwt.php";
-     
+    
 
-
-
-    quartosController::atualizar($con, $id = 2);
+    cliente::criar($con, $data);
 
    
     // $data = [ 

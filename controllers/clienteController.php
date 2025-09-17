@@ -1,39 +1,39 @@
 <?php
-require_once __DIR__ . "/../models/QuartoModel.php";
+require_once __DIR__ . "/../models/ClienteModel.php";
 
-class quartosController{
+class ClienteController{
     public static function criar($con, $data){
-        $resultado = QuartoModel::criar($con, $data);
-        if($resultado){
-            return jsonResponse(["message"=>'Quarto Cadastrado com sucesso!!!!']);
+        $result = ClientModel::criar($con, $data);
+        if($result){
+            return jsonResponse(["message"=>'cliente Cadastrado com sucesso!!!!']);
         }else{
             return jsonResponse(["message"=>'Eita rapaz algo deu rum ai em!!!!'],400);
         }
 
     }
 public static function listarTodos($con){
-    $listaQuartos = QuartoModel::listarTodos($con);
+    $listaQuartos = ClientModel::listarTodos($con);
     return jsonResponse($listaQuartos);
 }
 
 public static function buscarPorId($con, $id){
-    $buscarId = QuartoModel::buscarPorId($con, $id);
+    $buscarId = ClientModel::buscarPorId($con, $id);
     return jsonResponse($buscarId);
 }
 
 public static function deletar($con, $id){
-     $resultado = QuartoModel::deletar($con, $id);
+     $resultado = ClientModel::deletar($con, $id);
         if($resultado){
-            return jsonResponse(["message"=>'Quarto excluido com sucesso!!!!']);
+            return jsonResponse(["message"=>'cliente excluido com sucesso!!!!']);
         }else{
             return jsonResponse(["message"=>'Eita rapaz algo deu rum ai em!!!!'],400);
         }
 }
 
 public static function atualizar($con, $id, $data){
-    $resultado = QuartoModel::atualizar($con, $id,$data);
+    $resultado = ClientModel::atualizar($con, $id,$data);
     if($resultado){
-        return jsonResponse(["message"=>'Quarto atualizado com sucesso!!!!']);
+        return jsonResponse(["message"=>'cliente atualizado com sucesso!!!!']);
     }else{
         return jsonResponse(["message"=>'Eita rapaz algo deu rum ai em!!!!'],400);
     }

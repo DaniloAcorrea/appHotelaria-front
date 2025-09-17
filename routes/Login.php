@@ -3,7 +3,7 @@
 
     if($_SERVER['REQUEST_METHOD'] === "POST"){
         $data = json_decode(file_get_contents('php://input'), true);
-        authentiqueController::login($con, $data);
+        AuthController::login($con, $data);
     }else{
         jsonResponse([
             'status'=>'erro',

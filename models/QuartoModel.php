@@ -18,18 +18,18 @@
     }
 
     public static function criar($con,$data){
-    //    $sql = "INSERT INTO quartos (nome, numero_quarto, qtd_cama_casal, qtd_cama_solteiro, preco, disponivel) VALUES (?,?,?,?,?,?)";
+       $sql = "INSERT INTO quartos (nome, numero_quarto, qtd_cama_casal, qtd_cama_solteiro, preco, disponivel) VALUES (?,?,?,?,?,?)";
 
-    //    $stmt = $con->prepare($sql);
-    //    $stmt->bind_param("siiidi",
-    //         $data["nome"],
-    //         $data["numero"],
-    //         $data["qtd_cama_casal"],
-    //         $data["qtd_cama_solteiro"],
-    //         $data["preco"],
-    //         $data["disponivel"]
-    //     );
-    //     return $stmt->execute();
+       $stmt = $con->prepare($sql);
+       $stmt->bind_param("siiidi",
+            $data["nome"],
+            $data["numero"],
+            $data["qtd_cama_casal"],
+            $data["qtd_cama_solteiro"],
+            $data["preco"],
+            $data["disponivel"]
+        );
+        return $stmt->execute();
 
     }
 
