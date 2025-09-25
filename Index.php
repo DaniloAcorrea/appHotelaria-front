@@ -25,7 +25,7 @@ if($route != "api"){
     exit;
 } 
 elseif ($route === "api"){
-    if(in_array($subroute, ["login", "quarto","cliente"])){
+    if(in_array($subroute, ["login", "quarto","cliente","adiciona","pedido","reserva"])){
         require "routes/${subroute}.php";
     }else{
         return jsonResponse(['message' => 'rota da api invalida'], 404);

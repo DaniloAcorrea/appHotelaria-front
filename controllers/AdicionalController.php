@@ -1,9 +1,10 @@
 <?php
-require_once __DIR__ . "../models/QuartoModel.php";
+require_once __DIR__ . "/../models/AdicionalModel.php";
 
-class quartosController{
+class AdicionalController{
+  
     public static function criar($con, $data){
-        $resultado = QuartoModel::criar($con, $data);
+        $resultado = AdicionalModel::criar($con, $data);
         if($resultado){
             return jsonResponse(["message"=>'Quarto Cadastrado com sucesso!!!!']);
         }else{
@@ -12,17 +13,17 @@ class quartosController{
 
     }
 public static function listarTodos($con){
-    $listaQuartos = QuartoModel::listarTodos($con);
-    return jsonResponse($listaQuartos);
+    $listarAdicionais = AdicionalModel::listarTodos($con);
+    return jsonResponse($listarAdicionais);
 }
 
 public static function buscarPorId($con, $id){
-    $buscarId = QuartoModel::buscarPorId($con, $id);
+    $buscarId = AdicionalModel::buscarPorId($con, $id);
     return jsonResponse($buscarId);
 }
 
 public static function deletar($con, $id){
-     $resultado = QuartoModel::deletar($con, $id);
+     $resultado = AdicionalModel::deletar($con, $id);
         if($resultado){
             return jsonResponse(["message"=>'Quarto excluido com sucesso!!!!']);
         }else{
@@ -31,7 +32,7 @@ public static function deletar($con, $id){
 }
 
 public static function atualizar($con, $id, $data){
-    $resultado = QuartoModel::atualizar($con, $id,$data);
+    $resultado = AdicionalModel::atualizar($con, $id,$data);
     if($resultado){
         return jsonResponse(["message"=>'Quarto atualizado com sucesso!!!!']);
     }else{

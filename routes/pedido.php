@@ -1,28 +1,28 @@
 <?php
  
-require_once __DIR__ . "/../controllers/clienteController.php";
+require_once __DIR__ . "/../controllers/PedidoController.php";
  
 if ( $_SERVER['REQUEST_METHOD'] === "GET" ){
     $id = $segments[2] ?? null;
  
     if(isset($id)){
-        clienteController::getById($con,$id);
+        PedidoController::getById($con,$id);
     }
     else{
-        clienteController::getAll($con);
+        PedidoController::getAll($con);
     }
 
 }
 
 elseif($_SERVER['REQUEST_METHOD'] === "POST"){
         $data = json_decode(file_get_contents('php://input'), true);
-       clienteController::criar($con, $data);
+       PedidoController::criar($con, $data);
     }
 
 elseif($_SERVER['REQUEST_METHOD'] === "PUT"){
         $data = json_decode(file_get_contents('php://input'), true);
         $id = $data['id'];
-       clienteController::atualizar($con, $id, $data);
+       PedidoController::atualizar($con, $id, $data);
     }
 
     
@@ -31,10 +31,10 @@ elseif ( $_SERVER['REQUEST_METHOD'] === "DELETE" ){
     $id = $segments[2] ?? null;
  
     if(isset($id)){
-        clienteController::delete($con,$id);
+        PedidoController::delete($con,$id);
     }
     else{
-        jsonResponse(['message'=>"id do cliente obrigatorio"],403);
+        jsonResponse(['message'=>"id do pedido obrigatorio"],403);
     }
  
  

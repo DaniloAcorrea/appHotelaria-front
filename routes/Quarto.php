@@ -6,10 +6,10 @@ if ( $_SERVER['REQUEST_METHOD'] === "GET" ){
     $id = $segments[2] ?? null;
  
     if(isset($id)){
-        quartosController::getById($conn,$id);
+        quartosController::getById($con,$id);
     }
     else{
-        quartosController::getAll($conn);
+        quartosController::getAll($con);
     }
 
 }
@@ -31,7 +31,7 @@ elseif ( $_SERVER['REQUEST_METHOD'] === "DELETE" ){
     $id = $segments[2] ?? null;
  
     if(isset($id)){
-        quartosController::delete($conn,$id);
+        quartosController::delete($con,$id);
     }
     else{
         jsonResponse(['message'=>"id do quarto obrigatorio"],403);

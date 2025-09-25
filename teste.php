@@ -3,10 +3,11 @@
     require_once __DIR__ ."/controllers/AuthController.php";
     require_once __DIR__ ."/controllers/quartosController.php";
     require_once __DIR__ ."/controllers/passwordController.php";
+    require_once __DIR__ ."/controllers/AdicionalController.php";
     require_once __DIR__ ."/helpers/token_jwt.php";
     
 
-    cliente::criar($con, $data);
+    adiciona::criar($con, $data);
 
    
     // $data = [ 

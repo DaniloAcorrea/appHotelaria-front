@@ -1,55 +1,61 @@
-.titulo{
+.titulo {
     font-family: "Lato", sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-style: 25px;
+    font-size: 25px;
+    margin-bottom: 20px;
 }
 
-.btn{
-    font-family: "Lato", sans-serif;
-    font-weight: 700px;
+.btn {
+    font-family: "Latso", sans-serif;
+    font-weight: 700;
     font-style: normal;
     font-size: 17px;
 }
 
-.hero-frame{
-    height: 56vh;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    background: rgba(98, 30, 226, 0.2);
+input {
+    border-style: solid;
+    border-color: rgb(117, 171, 233);
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-.hero img, .hero{
+.btn-primary:hover {
+    background-color: rgb(3, 65, 136);
+    border-color: rgb(3, 65, 136);
+}
+
+#root {
+    flex-direction: column;
+    gap: 10vh;
+    padding-bottom: 10vh;
+    background-color: rgba(243, 242, 242, 0.87);
+}
+
+/*Hero Section*/
+.hero-frame {
+    overflow: hidden; /*Impede que a imagem vaze do quadro*/
+}
+
+.hero img, .hero {
+   /* Aplica propriedade cover para recortar parte da imagem (e não distorcê-la),
+   definindo seu ponto de foco a partir da propriedade object-position*/
     object-fit: cover;
     object-position: center;
     height: 70vh;
 }
 
+/*Responsividade media-query*/
 @media (max-width: 576px) {
-    .hero-frame{
+    .hero img, .hero {
         height: 50vh;
-
     }
-    
 }
 
-#root{
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 10vh;
-
-}
-
-.cards{
+.cards {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 35px;
 }
-
-
-
-
-

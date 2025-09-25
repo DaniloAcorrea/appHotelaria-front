@@ -1,10 +1,10 @@
-import renderCadastroPage from "./pages/cadastro.js";
-import renderHomePage from "./pages/home.js";
+import renderCadastroPage from "./pages/register.js";
+import renderHomePage from "./pages/Home.js";
 import renderLoginPage from "./pages/login.js";
 
 const routes = {
     "/login": renderLoginPage,
-    "/cadastro": renderCadastroPage,
+    "/register": renderCadastroPage,
     "/home": renderHomePage
 };
 
