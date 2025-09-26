@@ -1,3 +1,4 @@
+import DateSelector from "../components/DateSelector.js";
 import Footer from "../components/Footer.js";
 import Hero from "../components/Hero.js";
 import Navbar from "../components/Navbar.js";
@@ -20,6 +21,9 @@ export default function renderHomePage() {
         divRoot.innerHTML = '';
         const hero = Hero();
         divRoot.appendChild(hero);
+
+        const dateSelector = DateSelector();
+        divRoot.appendChild(dateSelector);
 
         const cardsGroup = document.createElement('div');
         cardsGroup.className = "cards";
