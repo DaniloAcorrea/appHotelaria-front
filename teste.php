@@ -1,39 +1,39 @@
-<?php
- 
+<?php 
     require_once __DIR__ ."/controllers/AuthController.php";
-    require_once __DIR__ ."/controllers/quartosController.php";
-    require_once __DIR__ ."/controllers/passwordController.php";
-    require_once __DIR__ ."/controllers/AdicionalController.php";
+    require_once __DIR__ ."/controllers/RoomController.php";
+    require_once __DIR__ ."/controllers/PasswordController.php";
     require_once __DIR__ ."/helpers/token_jwt.php";
+
+
+    RoomController::getAll($conn);
+    
     
 
-    adiciona::criar($con, $data);
-
-   
-    // $data = [ 
-    //     "nome" => "quarto do bom",
-    //     "numero" => 127,
-    //     "qtd_cama_casal" => 2, 
-    //     "qtd_cama_solteiro" => 5,
-    //     "preco" => 120,
-    //     "disponivel" => 1
-    // ];
-    
 
     // $data = [
-    //     "email"=>"danilo.acorrea@gmail.com",
-    //     "senha"=> "123456"
+    //     "nome" => "Quarto Supremo",
+    //     "numero" => 250,
+    //     "qtd_casal" => 1,
+    //     "qtd_solteiro" => 1,
+    //     "preco" => 350,
+    //     "disponivel" => 1
     // ];
- 
-    //authentiqueController::login($con, $data);
- 
-    // echo PasswordController::generateHash($data['senha']);
 
-    // $token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJzaXRlbWV1RGFuaWxvIiwiaWF0IjoxNzU2OTI2ODY2LCJleHAiOjE3NTY5MzA0NjYsInN1YiI6eyJpZCI6Mywibm9tZSI6IkRhbmlsbyIsImVtYWlsIjoiZGFuaWxvLmFjb3JyZWFAZ21haWwuY29tIiwicm9sZXMiOiJnZXJlbmNpYSJ9fQ.kL1ZYBR8W-JLG_Bty0jx5cSCiXLuSLKK_BiAq2bkXvU";
-    // echo var_dump(validateToken($token));
+    // $data = [
+    //     "email"=>"fulano@email.com",
+    //     "password"=>"123"
+    // ];
+    // AuthController::login($conn, $data);
 
- 
-    //$hash = ''
-    //echo "<br>";
-    //echo PasswordController::validateHash($data['password'], $hash);
+    // $tokenInvalido = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtZXVzaXRlIiwiaWF0IjoxNzU2OTIyNTQ1LCJleHAiOjE3NTY5MjYxNDUsInN1YiI6eyJpZCI6Miwibm9tZSI6ImZ1bGFubyIsImVtYWlsIjoiZnVsYW5vQGVtYWlsLmNvbSIsImNhcmdvIjoiZnVuY2lvbmFyaW8ifX0.-eySYeU6wQV8IKrbzKmTi_Rw9N3m_5LkC_mQwqQkc4M";
+    // echo validateToken($tokenInvalido);
+    // $tokenValido = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJtZXVzaXRlIiwiaWF0IjoxNzU2OTMwMjAwLCJleHAiOjE3NTY5MzM4MDAsInN1YiI6eyJpZCI6Miwibm9tZSI6ImZ1bGFubyIsImVtYWlsIjoiZnVsYW5vQGVtYWlsLmNvbSIsImNhcmdvIjoiZnVuY2lvbmFyaW8ifX0.nXykpS-rX4K-80OLf8NEVBHHOr9gcL4vUDb5P1LRZ2o";
+    // echo var_dump( validateToken($tokenValido) );
+    
+    
+    // echo PasswordController::generateHash($data['password']);
+    // $hash = '$2y$10$DmOoJfxGTqRg/bMwSEemPe0Llwce5uyOTzaE8sr.ru4Jq1CU.A7li';
+    // echo "<br>";
+    // echo PasswordController::validateHash($data['password'], $hash);
+
 ?>

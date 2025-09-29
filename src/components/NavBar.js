@@ -14,7 +14,7 @@ export default function Navbar() {
                 <a class="nav-link active" aria-current="page" href="home">Home</a>
                 </li>
                 <li class="nav-item">
-                <a class="navbar-link" href="#"><img src="public/assets/images/carrinho.png" style = "width: 30px; height: 30px;"></a>
+                <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -30,7 +30,7 @@ export default function Navbar() {
 
 
                 <li class="nav-item">
-                <a class="nav-link" href="register">Cadastre-se</a>
+                <a class="nav-link" href="cadastro">Cadastre-se</a>
                 </li>
 
                 <li class="nav-item">

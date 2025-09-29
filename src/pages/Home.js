@@ -1,54 +1,63 @@
-import Footer from "../components/Footer.js";
+import Footer from "../../../sitemeuDanilo/src/components/Footer.js";
+import CarouselCard from "../components/CarouselCard.js";
+import DateSelector from "../components/DateSelector.js";
 import Hero from "../components/Hero.js";
 import Navbar from "../components/Navbar.js";
 import RoomCard from "../components/RoomCard.js";
 
 export default function renderHomePage() {
-    // Navbar
+    //Navbar
     const nav = document.getElementById('navbar');
-    if (nav) {
-        nav.innerHTML = '';
-        const navbar = Navbar();
-        nav.appendChild(navbar);
-    } else {
-        console.error("Element with ID 'navbar' not found");
-    }
+    nav.innerHTML = '';
+    const navbar = Navbar();
+    nav.appendChild(navbar);
 
-    // Root (page body)
+    //Root (corpo da página)
     const divRoot = document.getElementById('root');
-    if (divRoot) {
-        divRoot.innerHTML = '';
-        const hero = Hero();
-        divRoot.appendChild(hero);
+    divRoot.innerHTML = '';
 
-        const cardsGroup = document.createElement('div');
-        cardsGroup.className = "cards";
-        for (let i = 0; i < 3; i++) {
-            const cards = RoomCard(i);
-            cardsGroup.appendChild(cards);
-        }
-        divRoot.appendChild(cardsGroup);
-    } else {
-        console.error("Element with ID 'root' not found");
+    const hero = Hero();
+    divRoot.appendChild(hero);
+
+    const dateSelector = DateSelector();
+    divRoot.appendChild(dateSelector);
+    
+    //Grupo para incorporar cada div de cada card, para aplicar display-flex
+    const cardsGroup = document.createElement('div');
+    cardsGroup.className = "cards";
+
+    /*Desafio: consertar o bug do carrossel
+    em cada card, E AINDA REUTILIZANDO O MESMO
+    COMPONENTE*/
+    for (var i=0; i < 3; i++) {
+        const cards = RoomCard(i);
+        cardsGroup.appendChild(cards);
     }
 
-    // Footer
-    const foot = document.getElementById('footer');
-    console.log('Footer element:', foot);
-    if (foot) {
-        foot.innerHTML = '';
-        const footer = Footer();
-        if (footer instanceof Node) {
-            foot.appendChild(footer);
+    const carouselCard = CarouselCard();
+    const carousel = carouselCard.getElementById('carousel');
+    carousel.appendChild(cardsGroup);
+
+    
+    
+    //Footer
+    divRoot.appendChild(cardsGroup);    
+     const foot = document.getElementById('footer');
+        console.log('Footer element:', foot);
+        if (foot) {
+            foot.innerHTML = '';
+            const footer = Footer();
+            if (footer instanceof Node) {
+                foot.appendChild(footer);
+            } else {
+                console.error('Footer component returned invalid content:', footer);
+            }
         } else {
-            console.error('Footer component returned invalid content:', footer);
+            console.error("Element with ID 'footer' not found");
         }
-    } else {
-        console.error("Element with ID 'footer' not found");
-    }
+
+
+
+  
 }
 
-// Run after DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    renderHomePage();
-});

@@ -1,28 +1,26 @@
-<?php 
-require_once __DIR__ . "jwt/jwt_include.php";
+<?php
+require_once __DIR__ . "/jwt/jwt_include.php";
 
-use firebase\JWT\JWT;
-use firebase\JWT\Key;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
-function CreateToken($user){
-    $playload = [
-        "iss" =>"sitemeuDanilo",
+function createToken($user){
+    $payload = [
+        "iss" => "meusite",
         "iat" => time(),
-        "exp" => time() + (60*(60 * 1)),
+        "exp" => time() + (60 * (60 * 1)),
         "sub" => $user
-
     ];
-    return JWT::encode($playload, SECRET_KEY);
-
+    return JWT::encode($payload, SECRET_KEY, "HS256");
 }
 
 function validateToken($token){
     try{
-        $key = new Key(SECRET_KEY, 'HS256');
+        $key = new Key(SECRET_KEY, "HS256");
         $decode = JWT::decode($token, $key);
         return $decode->sub;
     }catch(Exception $error){
-       return "erro";
+        return false;
     }
 }
 
